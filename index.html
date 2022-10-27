@@ -6,7 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Slider</title>
-    <link rel="stylesheet" href="./css/style.css" />
+
+    <!-- Font Awsome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body>
@@ -17,22 +25,17 @@
             <div class="slider-wrapper" tabindex="0">
 
                 <div class="item">
-                    <img src="./assets/img/01.webp" alt="Spiderman" />
+                    <img :src="slides[activeImage].image" :alt="slides.title">
                     <div class="text">
-                        <h3>Spiderman</h3>
-                        <p>
-                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et temporibus voluptatum suscipit
-                            tempore aliquid deleniti aut
-                            veniam inventore eligendi ex ad ullam, cumque provident totam omnis, magnam dolores dolorum
-                            corporis.
-                        </p>
+                        <h3>{{slides[activeImage].title}}</h3>
+                        <p>{{slides[activeImage].text}}</p>
                     </div>
                 </div>
 
                 <div class="thumbs">
-                    <div class="prev"></div>
-                    <div class="next"></div>
-                    <div class="thumb active">
+                    <div class="prev" @click="prevImage"></div>
+                    <div class="next" @click="nextImage"></div>
+                    <!-- <div class="thumb active">
                         <img src="./assets/img/01.webp" alt="Svezia" />
                     </div>
                     <div class="thumb">
@@ -46,7 +49,7 @@
                     </div>
                     <div class="thumb">
                         <img src="./assets/img/05.webp" alt="Avengers" />
-                    </div>
+                    </div> -->
                 </div>
 
             </div>
@@ -54,8 +57,11 @@
 
     </div>
 
+    <!-- VUE CDN -->
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
-    <script src="./js/script.js"></script>
+    
+    <!-- SCRIPT -->
+    <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
