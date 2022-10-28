@@ -46,7 +46,7 @@ createApp({
         prevImage() {
             this.activeImage--
             //console.log(this.activeImage)
-            if(this.activeImage === -1){
+            if(this.activeImage < 0){
                 this.activeImage = this.slides.length -1
             }
         },
